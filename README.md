@@ -28,3 +28,6 @@ The purpose of StudyTrack is to help students manage their study routine and kee
 
 ## Developer
 BCA Student
+## Project Preview
+
+![StudyTrack Dashboard](studytrack-preview.png)
