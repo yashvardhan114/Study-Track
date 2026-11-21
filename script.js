@@ -109,13 +109,31 @@ editButton.textContent = "Edit";
 editButton.className = "edit-btn";
 
 editButton.addEventListener("click", function() {
-    const updatedTask = prompt("Enter updated task name:", tasks[index].name);
+    const updatedTask = prompt(
+        "Enter updated task name:",
+        tasks[index].name
+    );
 
-    if (updatedTask !== null && updatedTask.trim() !== "") {
-        tasks[index].name = updatedTask.trim();
-        saveTasks();
-        displayTasks();
+    if (updatedTask === null || updatedTask.trim() === "") {
+        return;
     }
+
+    const newTaskName = updatedTask.trim();
+
+    const isDuplicate = tasks.some(function(task, taskIndex) {
+        return taskIndex !== index &&
+            task.name.toLowerCase() === newTaskName.toLowerCase();
+    });
+
+    if (isDuplicate) {
+        alert("This task already exists!");
+        return;
+    }
+
+    tasks[index].name = newTaskName;
+
+    saveTasks();
+    displayTasks();
 });
             const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
