@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyTrack - Student Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>StudyTrack</h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">My Subjects</a>
+                <a href="#">My Tasks</a>
+                <a href="#">My Progress</a>
+            </nav>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header>
+                <h1>Welcome to StudyTrack!</h1>
+                <p>Manage your studies and achieve your goals.</p>
+            </header>
+
+            <!-- Dashboard Cards -->
+            <section class="cards">
+
+                <div class="card">
+                    <h3>Total Subjects</h3>
+                    <h2 id="total-subjects">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>pending Tasks</h3>
+                    <h2 id="Pending-tasks">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>completed tasks</h3>
+                    <h2 id="completed-tasks">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>total Tasks</h3>
+                    <h2 id="total-tasks">0</h2>
+                </div>
+
+            </section>
+
+            <!-- Today's Tasks -->
+            <section class="tasks">
+
+                <h2>Today's Study Plan</h2>
+                <section class="tasks">
+    <h2>Filter Tasks by Subject</h2>
+
+<select id="subject-filter">
+    <option value="all">All Subjects</option>
+</select>
+    <h2>Upcoming Tasks</h2>
+    <div id="upcoming-tasks"></div>
+</section>
+<section class="tasks">
+    <h2>My Subjects</h2>
+
+    <form id="subject-form">
+        <input
+            type="text"
+            id="subject-input"
+            placeholder="Enter subject name"
+            required
+        >
+
+        <button type="submit">Add Subject</button>
+    </form>
+
+    <div id="subject-list"></div>
+</section>
+
+                <form id="task-form">
+                    <input
+                        
+                         type="text"
+                         id="task-input"
+                         placeholder="Enter your study task"
+                         required
+
+                    >
+                         <input
+                           type="date"
+                           id="task-date"
+                         >
+                         <select id="task-subject" required>
+    <option value="">Select Subject</option>
+</select>
+                    
+                    
+
+
+                    <button type="submit">Add Task</button>
+                
+                </form>
+
+                <input
+    type="text"
+    id="task-search"
+    placeholder="Search your tasks..."
+>
+                <div id="task-list"></div>
+             </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
